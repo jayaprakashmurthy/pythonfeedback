@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}My Account{% endblock %}
+
+{% block content %}
+<h1>Welcome to your account, {{ user.firstname }}!</h1>
+<p>Email: {{ user.email }}</p>
+<p>Company: {{ user.company }}</p>
+<!-- Add debug output to verify data -->
+<h2>Debug Output:</h2>
+<p>User ID: {{ user.id }}</p>
+<p>User First Name: {{ user.firstname }}</p>
+<p>User Email: {{ user.email }}</p>
+<p>User Company: {{ user.company }}</p>
+{% endblock %}

@@ -1,0 +1,139 @@
+
+{% extends "base.html" %} {% block title %}Feedback{% endblock %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Exit Feedback</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        input[type="text"], select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Employee Exit Feedback Form</h1>
+
+<form action="/submit_exit_feedback" method="post">
+    <label for="name">Employee Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="employee_id">Employee ID:</label>
+    <input type="text" id="employee_id" name="employee_id" required>
+
+    <label for="last_day">Last Working Day:</label>
+    <input type="date" id="last_day" name="last_day" required>
+
+    <label for="reason_leave">Reason for Leaving:</label>
+    <textarea id="reason_leave" name="reason_leave" required></textarea>
+
+    <label for="satisfaction">Overall Satisfaction with Company:</label>
+    <select id="satisfaction" name="satisfaction" required>
+        <option value="">-- Please Select --</option>
+        <option value="very_satisfied">Very Satisfied</option>
+        <option value="satisfied">Satisfied</option>
+        <option value="neutral">Neutral</option>
+        <option value="dissatisfied">Dissatisfied</option>
+        <option value="very_dissatisfied">Very Dissatisfied</option>
+    </select>
+
+    <label for="improvements">Suggestions for Improvement:</label>
+    <textarea id="improvements" name="improvements"></textarea>
+
+    <label for="communication">Rate Communication within the Company:</label>
+    <select id="communication" name="communication" required>
+        <option value="">-- Please Select --</option>
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="average">Average</option>
+        <option value="poor">Poor</option>
+    </select>
+
+    <label for="work_environment">Rate Work Environment:</label>
+    <select id="work_environment" name="work_environment" required>
+        <option value="">-- Please Select --</option>
+        <option value="excellent">Excellent</option>
+        <option value="good">Good</option>
+        <option value="average">Average</option>
+        <option value="poor">Poor</option>
+    </select>
+
+    <label for="recognition">Feeling of Recognition for Work Done:</label>
+    <select id="recognition" name="recognition" required>
+        <option value="">-- Please Select --</option>
+        <option value="strongly_agree">Strongly Agree</option>
+        <option value="agree">Agree</option>
+        <option value="neutral">Neutral</option>
+        <option value="disagree">Disagree</option>
+        <option value="strongly_disagree">Strongly Disagree</option>
+    </select>
+
+    <label for="recommendation">Would You Recommend Company to Others?</label>
+    <select id="recommendation" name="recommendation" required>
+        <option value="">-- Please Select --</option>
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+    </select>
+
+    <label for="additional_comments">Additional Comments:</label>
+    <textarea id="additional_comments" name="additional_comments"></textarea>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
+
+{% endblock %}
